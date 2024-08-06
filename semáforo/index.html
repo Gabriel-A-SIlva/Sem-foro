@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(55, 56, 56);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #caixa {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            height: 600px;
+            width: 300px;
+            background-color: black;
+            border-radius: 3rem;
+            border: 1rem solid rgb(36, 36, 36);
+        }
+        #red {
+            width: 140px;
+            height: 140px;
+            background-color: rgb(97, 4, 4);
+            border-radius: 150px;
+        }
+        #yellow {
+            width: 140px;
+            height: 140px;
+            background-color:rgb(101, 54, 4);
+            border-radius: 150px;
+        }
+        #green {
+            width: 140px;
+            height: 140px;
+            background-color:rgb(0,100,0);
+            border-radius: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa">
+        <div id="red">
+
+        </div>
+        <div id="yellow">
+
+        </div>
+        <div id="green">
+
+        </div>
+    </div>
+    <script>
+        function Semáforo() {
+
+            /*Função para ligar o sinal vermelho*/
+            function red() {
+                let redclaro = document.querySelector('#red')
+                redclaro.style.backgroundColor = 'rgb(253, 2, 2)'
+            }
+            
+            /*Função para desligar o sinal Vermelho*/
+            function reddarck() {
+                let redescuro = document.querySelector('#red')
+                redescuro.style.backgroundColor = 'darkred'
+            }
+            /*Função para ligar o sinal amarelo*/
+            function yellow() {
+                let yellowclaro = document.querySelector('#yellow')
+                yellowclaro.style.backgroundColor = 'rgb(235, 127, 11)'
+            }
+            /*Função para desligar o sinal amarelo*/
+            function finalizaryellow() {
+                let yellowescuro = document.querySelector('#yellow')
+                yellowescuro.style.backgroundColor = 'rgb(101, 54, 4)'
+            }
+            /*Função para ligar o sinal verde*/
+            function green() {
+                let green = document.querySelector('#green')
+                green.style.backgroundColor = 'rgb(5,249,5)'
+            }
+            /*Função para desligar o sinal Verde*/
+            function finalizargreen() {
+                let greenescuro = document.querySelector('#green')
+                greenescuro.style.backgroundColor = 'rgb(0,100,0)'
+            }
+            
+        }    
+    
+    /*Cronomentro, para o funcionamento temporizado de cada função*/
+    setTimeout(red, 1000)
+    setTimeout(reddarck, 8000)
+    setTimeout(yellow, 8000)
+    setTimeout(finalizaryellow, 12000)
+    setTimeout(green, 12000)
+    setTimeout(finalizargreen, 19000)
+    
+    /*Reinicia todo o ciclo após 20 segundos*/
+    setTimeout(Semáforo,20000)
+    
+    /*responsável pelo inicio do funcionamento do Semáforo*/
+    Semáforo()     
+    </script>
+</body>
+</html>
